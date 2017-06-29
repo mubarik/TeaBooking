@@ -1,0 +1,47 @@
+<%= form_for(failed_request) do |f| %>
+  <% if failed_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(failed_request.errors.count, "error") %> prohibited this failed_request from being saved:</h2>
+
+      <ul>
+      <% failed_request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_email %>
+    <%= f.text_field :user_email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_date %>
+    <%= f.datetime_select :start_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_date %>
+    <%= f.datetime_select :end_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :number_slots %>
+    <%= f.number_field :number_slots %>
+  </div>
+
+  <div class="field">
+    <%= f.label :club_name %>
+    <%= f.text_field :club_name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

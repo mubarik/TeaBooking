@@ -10,7 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170629042642) do
+ActiveRecord::Schema.define(version: 20170629184213) do
+
+  create_table "booking_requests", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string   "club_name"
+    t.index ["user_id"], name: "index_booking_requests_on_user_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "user_email"
+    t.datetime "date"
+    t.string   "club_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "failed_requests", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "user_email"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer  "number_slots"
+    t.string   "club_name"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["user_id"], name: "index_failed_requests_on_user_id"
+  end
 
   create_table "tea_bookings", force: :cascade do |t|
     t.string   "user_email"
@@ -20,6 +52,12 @@ ActiveRecord::Schema.define(version: 20170629042642) do
     t.string   "club_name"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "user_email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

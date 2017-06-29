@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :failed_requests
+  resources :bookings
+  resources :booking_requests
+  resources :users
 	root 'tea_bookings#index', as: 'root'
   	resources :tea_bookings do
   		collection do 

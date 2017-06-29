@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  user_email: MyString
+  date: 2017-06-29 14:36:36
+  club_name: MyString
+
+two:
+  user: two
+  user_email: MyString
+  date: 2017-06-29 14:36:36
+  club_name: MyString

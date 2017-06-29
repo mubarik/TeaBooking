@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @failed_request.user %>
+</p>
+
+<p>
+  <strong>User email:</strong>
+  <%= @failed_request.user_email %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @failed_request.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @failed_request.end_date %>
+</p>
+
+<p>
+  <strong>Number slots:</strong>
+  <%= @failed_request.number_slots %>
+</p>
+
+<p>
+  <strong>Club name:</strong>
+  <%= @failed_request.club_name %>
+</p>
+
+<%= link_to 'Edit', edit_failed_request_path(@failed_request) %> |
+<%= link_to 'Back', failed_requests_path %>

@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Failed Requests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>User email</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Number slots</th>
+      <th>Club name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @failed_requests.each do |failed_request| %>
+      <tr>
+        <td><%= failed_request.user %></td>
+        <td><%= failed_request.user_email %></td>
+        <td><%= failed_request.start_date %></td>
+        <td><%= failed_request.end_date %></td>
+        <td><%= failed_request.number_slots %></td>
+        <td><%= failed_request.club_name %></td>
+        <td><%= link_to 'Show', failed_request %></td>
+        <td><%= link_to 'Edit', edit_failed_request_path(failed_request) %></td>
+        <td><%= link_to 'Destroy', failed_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Failed Request', new_failed_request_path %>
