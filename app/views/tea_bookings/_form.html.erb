@@ -1,0 +1,42 @@
+<%= form_for(tea_booking) do |f| %>
+  <% if tea_booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tea_booking.errors.count, "error") %> prohibited this tea_booking from being saved:</h2>
+
+      <ul>
+      <% tea_booking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_email %>
+    <%= f.text_field :user_email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_date %>
+    <%= f.datetime_select :start_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_date %>
+    <%= f.datetime_select :end_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :number_time_slots %>
+    <%= f.number_field :number_time_slots %>
+  </div>
+
+  <div class="field">
+    <%= f.label :club_name %>
+    <%= f.text_field :club_name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

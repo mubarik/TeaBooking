@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User email:</strong>
+  <%= @tea_booking.user_email %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @tea_booking.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @tea_booking.end_date %>
+</p>
+
+<p>
+  <strong>Number time slots:</strong>
+  <%= @tea_booking.number_time_slots %>
+</p>
+
+<p>
+  <strong>Club name:</strong>
+  <%= @tea_booking.club_name %>
+</p>
+
+<%= link_to 'Edit', edit_tea_booking_path(@tea_booking) %> |
+<%= link_to 'Back', tea_bookings_path %>

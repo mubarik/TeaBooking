@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_email: MyString
+  start_date: 2017-06-29 00:26:42
+  end_date: 2017-06-29 00:26:42
+  number_time_slots: 1
+  club_name: MyString
+
+two:
+  user_email: MyString
+  start_date: 2017-06-29 00:26:42
+  end_date: 2017-06-29 00:26:42
+  number_time_slots: 1
+  club_name: MyString

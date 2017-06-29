@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<h2>Import Tea booking Requests</h2>
+<%= form_tag import_tea_bookings_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+
+<h1>Tea Bookings Requests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User email</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Number time slots</th>
+      <th>Club name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tea_bookings.each do |tea_booking| %>
+      <tr>
+        <td><%= tea_booking.user_email %></td>
+        <td><%= tea_booking.start_date %></td>
+        <td><%= tea_booking.end_date %></td>
+        <td><%= tea_booking.number_time_slots %></td>
+        <td><%= tea_booking.club_name %></td>
+        <td><%= link_to 'Show', tea_booking %></td>
+        <td><%= link_to 'Edit', edit_tea_booking_path(tea_booking) %></td>
+        <td><%= link_to 'Destroy', tea_booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tea Booking Request', new_tea_booking_path %>
