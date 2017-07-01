@@ -63,6 +63,7 @@ class TeaBookingsController < ApplicationController
 
   def import
     TeaBooking.import(params[:file])
+    User.import()
     redirect_to root_url, notice: 'Tea Bookings imported.'
   end
 
